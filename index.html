@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="thumbnail" id="thumbnail"></div>
+        <div class="content-title" id="contentTitle">Loading title...</div>
+        <div class="content-description" id="contentDesc">
+            Loading description...
+        </div>
+
+        <div class="content-info">
+          <h1 class="redirect-text">
+            You will be redirected in <span class="countdown" id="countdown">10</span>s
+          </h1>
+
+          <p class="subtitle">Please wait a moment...</p>
+
+          <div class="progress-container">
+              <div class="progress-bar">
+                  <div class="progress-fill" id="progressFill"></div>
+              </div>
+          </div>
+
+          <button class="manual-redirect-btn" onclick="redirectNow()">Not redirected? Click here</button>
+        </div>
+    </div>
+
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/utils.js"></script>
+</body>
+</html>
