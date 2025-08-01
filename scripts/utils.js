@@ -35,6 +35,7 @@ const timer = setInterval(() => {
         const progressContainer = document.querySelector('.progress-container');
           if (progressContainer) {
               progressContainer.style.display = 'none';
+              progressContainer.remove();
           }
         watchBtn.disabled = false;
         watchBtn.textContent = '⏵Watch Movie';
