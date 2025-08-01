@@ -15,7 +15,7 @@ document.getElementById('contentDesc').innerHTML = content.description.replace('
 document.getElementById('thumbnail').style.backgroundImage = `url('${content.image}')`;
 
 // Countdown logic
-let countdown = 100;
+let countdown = 10;
 const countdownElements = document.querySelectorAll('.countdown');
 const progressFill = document.getElementById('progressFill');
 const targetUrl = content.redirectUrl;
