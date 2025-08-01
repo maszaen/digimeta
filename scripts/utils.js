@@ -1,63 +1,68 @@
-// scripts/utils.js
 const params = new URLSearchParams(window.location.search);
 const movieKey = params.get('movie');
+const content = movieData[movieKey];
+
 const fallback = {
     title: 'Unknown Movie',
     description: 'Movie not found or invalid link. Please try again.',
     image: '/assets/default.jpg',
-    redirectUrl: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66'
+    redirectUrl: null,
 };
 
-const content = movieData[movieKey] || fallback;
+const finalContent = content || fallback;
 
 // Set dynamic content
-document.getElementById('contentTitle').textContent = content.title;
-document.getElementById('contentDesc').textContent = content.description;
-document.getElementById('thumbnail').style.backgroundImage = `url('${content.image}')`;
+document.getElementById('contentTitle').textContent = finalContent.title;
+document.getElementById('contentDesc').textContent = finalContent.description;
+document.getElementById('thumbnail').style.backgroundImage = `url('${finalContent.image}')`;
 
-// Countdown logic
-let countdown = 5;
-const countdownElements = document.querySelectorAll('.countdown');
-const progressFill = document.getElementById('progressFill');
+// Atur tombol dan teks berdasarkan validitas data
 const watchBtn = document.getElementById('watchBtn');
-const targetUrl = content.redirectUrl;
-const manualUrl = content.redirectUrl2 || content.redirectUrl;
+const redirectText = document.querySelector('.redirect-text');
+const subtitle = document.querySelector('.subtitle');
+const progressContainer = document.querySelector('.progress-container');
 
-progressFill.style.width = '0%';
-
-const timer = setInterval(() => {
-    countdown--;
-    countdownElements.forEach(el => el.textContent = countdown + ' seconds');
-    progressFill.style.width = ((5 - countdown) / 5) * 100 + '%';
+if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
+    if (progressContainer) progressContainer.style.display = 'none';
+    watchBtn.disabled = true;
+    watchBtn.textContent = 'Unavailable';
+    redirectText.textContent = 'Video unavailable or not found';
+    subtitle.textContent = 'You can still try watching manually';
+} else {
+    // Jalankan countdown normal
+    const countdownElements = document.querySelectorAll('.countdown');
+    const progressFill = document.getElementById('progressFill');
+    const targetUrl = finalContent.redirectUrl;
+    const manualUrl = finalContent.redirectUrl2 || finalContent.redirectUrl;
     
-    if (countdown <= 0) {
-        clearInterval(timer);
-        const progressContainer = document.querySelector('.progress-container');
-          if (progressContainer) {
-              progressContainer.style.display = 'none';
-              progressContainer.remove(); 
-          }
-        watchBtn.disabled = false;
-        watchBtn.textContent = '⏵Watch Movie';
-        document.querySelector('.redirect-text').textContent = 'Ready to watch!';
-        document.querySelector('.subtitle').textContent = 'Click the button below to start watching';
-    }
-}, 1000);
+    progressFill.style.width = '0%';
+    let countdown = 10;
+    
+    const timer = setInterval(() => {
+        countdown--;
+        countdownElements.forEach(el => el.textContent = countdown + ' seconds');
+        progressFill.style.width = ((10 - countdown) / 10) * 100 + '%';
+    
+        if (countdown <= 0) {
+            clearInterval(timer);
+            if (progressContainer) progressContainer.remove();
+            watchBtn.disabled = false;
+            watchBtn.textContent = '⏵Watch Movie';
+            redirectText.textContent = 'Ready to watch!';
+            subtitle.textContent = 'Click the button below to start watching';
+        }
+    }, 1000);
 
-function watchMovie() {
-    if (!watchBtn.disabled) {
-        clearInterval(timer);
-        window.location.href = targetUrl;
-    }
+    watchBtn.onclick = () => {
+        if (!watchBtn.disabled) {
+            clearInterval(timer);
+            window.location.href = targetUrl;
+        }
+    };
+
+    // Prefetch link
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = targetUrl;
+    document.head.appendChild(link);
 }
-
-function manualRedirect() {
-    clearInterval(timer);
-    window.location.href = manualUrl;
-}
-
-// Prefetch
-const link = document.createElement('link');
-link.rel = 'prefetch';
-link.href = targetUrl;
-document.head.appendChild(link);
