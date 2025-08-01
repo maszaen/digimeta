@@ -60,6 +60,11 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
         }
     };
 
+    function manualRedirect() {
+        clearInterval(timer);
+        window.location.href = manualUrl;
+    }
+
     // Prefetch link
     const link = document.createElement('link');
     link.rel = 'prefetch';
