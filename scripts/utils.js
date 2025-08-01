@@ -19,6 +19,7 @@ let countdown = 5;
 const countdownElements = document.querySelectorAll('.countdown');
 const progressFill = document.getElementById('progressFill');
 const targetUrl = content.redirectUrl;
+const manualUrl = content.redirectUrl2;
 progressFill.style.width = '0%';
 const timer = setInterval(() => {
     countdown--;
@@ -33,6 +34,11 @@ const timer = setInterval(() => {
 function redirectNow() {
     clearInterval(timer);
     window.location.href = targetUrl;
+}
+
+function manualRedirect() {
+    clearInterval(timer);
+    window.location.href = manualUrl;
 }
 
 // Prefetch
