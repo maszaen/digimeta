@@ -37,7 +37,7 @@ const timer = setInterval(() => {
               progressContainer.style.display = 'none';
           }
         watchBtn.disabled = false;
-        watchBtn.textContent = 'Watch Movie';
+        watchBtn.textContent = '⏵Watch Movie';
         document.querySelector('.redirect-text').textContent = 'Ready to watch!';
         document.querySelector('.subtitle').textContent = 'Click the button below to start watching';
     }

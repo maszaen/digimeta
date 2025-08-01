@@ -4,8 +4,16 @@
   box-sizing: border-box; 
 }
 
+@font-face {
+  font-family: 'Helvetica Local';
+  src: url('/assets/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Helvetica Local', system-ui, sans-serif;
   background-color: #f0f4f9;
   min-height: 100vh;
   display: flex;
@@ -75,11 +83,11 @@ body {
 .subtitle {
   font-size: 14px;
   color: #64748b;
-  margin-bottom: 32px;
+  margin-bottom: 15px;
 }
 
 .progress-container {
-  margin: 0px 0;
+  margin: 0;
 }
 
 .progress-bar {
