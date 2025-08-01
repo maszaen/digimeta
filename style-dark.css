@@ -3,7 +3,7 @@
   padding: 0; 
   box-sizing: border-box; 
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 #f1f5f9;
+  scrollbar-color: #4a5568 #2d3748;
 }
 
 @font-face {
@@ -16,13 +16,13 @@
 
 body {
   font-family: 'Helvetica Local', system-ui, sans-serif;
-  background-color: #f0f4f9;
+  background-color: #0f172a;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #334155;
+  color: #e2e8f0;
 }
 
 .main-container {
@@ -34,13 +34,13 @@ body {
 }
 
 .left-container {
-  background: white;
+  background: #1e293b;
   border-radius: 40px 40px 20px 20px;
   padding: 25px;
   max-width: 380px;
   width: 100%;
   text-align: center;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
   position: sticky;
   top: 20px;
   height: fit-content;
@@ -53,11 +53,11 @@ body {
 }
 
 .right-container {
-  background: white;
+  background: #1e293b;
   border-radius: 40px 40px 20px 20px;
   padding: 30px;
   flex: 1;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
   max-height: 654px;
   overflow-y: auto;
 }
@@ -65,8 +65,8 @@ body {
 .thumbnail {
   width: 100%;
   height: 480px;
-  background-color: #1a1a1a;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23000" width="400" height="600"/><text x="200" y="250" text-anchor="middle" fill="%23333" font-size="24" font-family="Arial">FANTASTIC</text><text x="200" y="290" text-anchor="middle" fill="%23333" font-size="48" font-weight="bold" font-family="Arial">4</text><text x="200" y="330" text-anchor="middle" fill="%23333" font-size="20" font-family="Arial">FIRST STEPS</text></svg>');
+  background-color: #0f172a;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23000" width="400" height="600"/><text x="200" y="250" text-anchor="middle" fill="%23666" font-size="24" font-family="Arial">FANTASTIC</text><text x="200" y="290" text-anchor="middle" fill="%23666" font-size="48" font-weight="bold" font-family="Arial">4</text><text x="200" y="330" text-anchor="middle" fill="%23666" font-size="20" font-family="Arial">FIRST STEPS</text></svg>');
   background-size: cover;
   background-position: center;
   border-radius: 35px;
@@ -76,18 +76,18 @@ body {
 .redirect-text {
   font-size: 20px;
   font-weight: 600;
-  color: #1e293b;
+  color: #f1f5f9;
   margin-bottom: 8px;
 }
 
 .countdown { 
-  color: green; 
+  color: #10b981; 
   font-weight: 700; 
 }
 
 .subtitle {
   font-size: 14px;
-  color: #64748b;
+  color: #94a3b8;
   margin-bottom: 15px;
 }
 
@@ -98,21 +98,21 @@ body {
 .progress-bar {
   width: 100%;
   height: 4px;
-  background-color: #e2e8f0;
+  background-color: #334155;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background-color: green;
+  background-color: #10b981;
   width: 0%;
   transition: width 1s linear;
 }
 
 .content-info {
-  background-color: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  background-color: #0f172a;
+  border: 1px solid #334155;
   border-radius: 15px;
   padding: 15px 20px;
   margin-top: 25px;
@@ -122,19 +122,19 @@ body {
 .content-title {
   font-size: 23px;
   font-weight: bold;
-  color: #033f7bff;
+  color: #60a5fa;
   margin-bottom: 8px;
 }
 
 .content-description {
   font-size: 14px;
-  color: #475569;
+  color: #cbd5e1;
   line-height: 1.5;
 }
 
 .manual-redirect-btn {
   background: none;
-  color: #033f7bff;
+  color: #60a5fa;
   border: none;
   font-size: 14px;
   font-weight: 500;
@@ -143,21 +143,21 @@ body {
 }
 
 .manual-redirect-btn:hover {
-  background-color: #f3f4f6;
+  background-color: #374151;
 }
 
 .about-title {
   font-size: 28px;
   font-weight: bold;
-  color: #1e293b;
+  color: #f1f5f9;
   margin-bottom: 20px;
-  border-bottom: 1.5px solid #e2e8f0;
+  border-bottom: 1.5px solid #334155;
   padding-bottom: 10px;
 }
 
 .watch-btn {
-  background-color: #1e293b;
-  color: white;
+  background-color: #f1f5f9;
+  color: #1e293b;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 16px;
@@ -170,14 +170,14 @@ body {
 }
 
 .watch-btn:hover {
-  background-color: #1e3a8a;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
 
 .watch-btn:disabled {
-  background-color: #cbd5e1;
-  color: #64748b;
+  background-color: #475569;
+  color: #94a3b8;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
@@ -187,7 +187,7 @@ body {
 .about-content {
   font-size: 16px;
   line-height: 1.7;
-  color: #374151;
+  color: #cbd5e1;
   text-align: justify;
 }
 
@@ -199,8 +199,8 @@ body {
 }
 
 .tag {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: #374151;
+  color: #e5e7eb;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 12px;
@@ -208,9 +208,9 @@ body {
 }
 
 .movie-details {
-  background-color: #f9fafb;
+  background-color: #0f172a;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
   padding: 20px 20px 10px 20px;
   margin-bottom: 25px;
 }
@@ -223,19 +223,19 @@ body {
 
 .detail-label {
   font-weight: 600;
-  color: #1f2937;
+  color: #f9fafb;
   min-width: 80px;
 }
 
 .detail-value {
-  color: #4b5563;
+  color: #d1d5db;
   flex: 1;
 }
 
 .rating-text {
   font-size: 20px;
   font-weight: 600;
-  color: #1e293b;
+  color: #f1f5f9;
   margin-right: 10px;
 }
 
@@ -246,8 +246,8 @@ body {
   gap: 15px;
   margin-bottom: 20px;
   padding: 15px 25px;
-  background-color: #fef3c7;
-  border: 1px solid #fcd34d;
+  background-color: #451a03;
+  border: 1px solid #92400e;
   border-radius: 12px;
 }
 
@@ -257,18 +257,18 @@ body {
 }
 
 .rating-star-disabled {
-  color: #e5e7eb;
+  color: #4b5563;
 }
 
 .rating-score {
   font-size: 36px;
   font-weight: bold;
-  color: #1f2937;
+  color: #f9fafb;
 }
 
 .rating-total {
   font-size: 14px;
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 .movie-grid {
@@ -278,26 +278,26 @@ body {
 }
 
 .movie-card {
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
   border-radius: 12px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  background: white;
+  background: #1e293b;
   cursor: pointer;
 }
 
 .movie-card img {
-  background-color: #f8fafc;
+  background-color: #0f172a;
   border-radius: 12px 12px 0 0px;
   overflow: hidden;
   width: 100%;
   height: 300px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
 }
 
 .movie-card:hover {
   transform: translateY(-6px) scale(0.98);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-  color: #000;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  color: #f1f5f9;
 }
 
 .movie-thumb {
@@ -312,20 +312,20 @@ body {
   padding: 10px 10px;
   font-size: 18px;
   font-weight: bold;
-  color: #1f2937;
+  color: #f9fafb;
   text-align: left;
 }
 
 .other-movies-section {
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid #334155;
 }
 
 .other-movies-title {
   font-size: 24px;
   font-weight: 700;
-  color: #1e293b;
+  color: #f1f5f9;
   margin-bottom: 16px;
 }
 
@@ -337,16 +337,16 @@ body {
 }
 
 .movie-item {
-  background-color: #f1f5f9;
+  background-color: #0f172a;
   padding: 12px 16px;
   border-radius: 10px;
-  color: #334155;
+  color: #cbd5e1;
   font-size: 14px;
   transition: background-color 0.2s ease;
 }
 
 .movie-item:hover {
-  background-color: #e2e8f0;
+  background-color: #334155;
 }
 
 .explore-more {
@@ -355,7 +355,7 @@ body {
 }
 
 .explore-link {
-  color: #033f7bff;
+  color: #60a5fa;
   font-weight: 500;
   text-decoration: none;
   font-size: 16px;

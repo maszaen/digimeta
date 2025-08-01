@@ -27,7 +27,7 @@ progressFill.style.width = '0%';
 
 const timer = setInterval(() => {
     countdown--;
-    countdownElements.forEach(el => el.textContent = countdown);
+    countdownElements.forEach(el => el.textContent = countdown + ' seconds');
     progressFill.style.width = ((5 - countdown) / 5) * 100 + '%';
     
     if (countdown <= 0) {
@@ -35,7 +35,7 @@ const timer = setInterval(() => {
         const progressContainer = document.querySelector('.progress-container');
           if (progressContainer) {
               progressContainer.style.display = 'none';
-              progressContainer.remove();
+              progressContainer.remove(); 
           }
         watchBtn.disabled = false;
         watchBtn.textContent = '⏵Watch Movie';
