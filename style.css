@@ -79,7 +79,7 @@ body {
 }
 
 .progress-container {
-  margin: 10px 0;
+  margin: 0px 0;
 }
 
 .progress-bar {
@@ -140,6 +140,35 @@ body {
   margin-bottom: 20px;
   border-bottom: 1.5px solid #e2e8f0;
   padding-bottom: 10px;
+}
+
+.watch-btn {
+  background-color: #1e293b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.watch-btn:hover {
+  background-color: #1e3a8a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.watch-btn:disabled {
+  background-color: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
 }
 
 .about-content {

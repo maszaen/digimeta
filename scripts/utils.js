@@ -32,9 +32,12 @@ const timer = setInterval(() => {
     
     if (countdown <= 0) {
         clearInterval(timer);
-        // Enable tombol dan ubah text
+        const progressContainer = document.querySelector('.progress-container');
+          if (progressContainer) {
+              progressContainer.style.display = 'none';
+          }
         watchBtn.disabled = false;
-        watchBtn.textContent = '🎬 Watch Movie';
+        watchBtn.textContent = 'Watch Movie';
         document.querySelector('.redirect-text').textContent = 'Ready to watch!';
         document.querySelector('.subtitle').textContent = 'Click the button below to start watching';
     }
