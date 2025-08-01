@@ -3,7 +3,7 @@ const movieData = {
         title: 'The Fantastic 4: First Step',
         description: 'The Fantastic 4 are launching in {count} seconds, get ready for their explosive origin story!',
         image: '/assets/fan4.jpeg',
-        redirectUrls: 'https://www.profitableratecpm.com/mucgga0tpq?key=3f058edeedd092210797305094c5afa4'
+        redirectUrl: 'https://www.profitableratecpm.com/mucgga0tpq?key=3f058edeedd092210797305094c5afa4'
     },
     'oldmov': {
         title: 'Old Movie Revival',
