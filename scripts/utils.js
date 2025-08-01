@@ -4,14 +4,14 @@ const fallback = {
     title: 'Unknown Movie',
     description: 'Movie not found or invalid link. Please try again.',
     image: '/assets/default.jpg',
-    redirectUrl: 'https://www.profitableratecpm.com/mucgga0tpq?key=3f058edeedd092210797305094c5afa4'
+    redirectUrl: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66'
 };
 
 const content = movieData[movieKey] || fallback;
 
 // Set dynamic content
 document.getElementById('contentTitle').textContent = content.title;
-document.getElementById('contentDesc').innerHTML = content.description.replace('{count}', '<span class="countdown" id="countdown">10</span>');
+document.getElementById('contentDesc').innerHTML = content.description.replace('{count}', '<span class="countdown" id="countdown">5</span>');
 document.getElementById('thumbnail').style.backgroundImage = `url('${content.image}')`;
 
 // Countdown logic
