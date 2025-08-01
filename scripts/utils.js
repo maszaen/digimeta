@@ -15,7 +15,7 @@ document.getElementById('contentDesc').innerHTML = content.description.replace('
 document.getElementById('thumbnail').style.backgroundImage = `url('${content.image}')`;
 
 // Countdown logic
-let countdown = 10;
+let countdown = 5;
 const countdownElements = document.querySelectorAll('.countdown');
 const progressFill = document.getElementById('progressFill');
 const targetUrl = content.redirectUrl;
@@ -23,15 +23,16 @@ progressFill.style.width = '0%';
 const timer = setInterval(() => {
     countdown--;
     countdownElements.forEach(el => el.textContent = countdown);
-    progressFill.style.width = ((10 - countdown) / 10) * 100 + '%';
+    progressFill.style.width = ((5 - countdown) / 5) * 100 + '%';
     if (countdown <= 0) {
         clearInterval(timer);
         setTimeout(() => window.location.href = targetUrl, 200);
     }
 }, 1000);
+
 function redirectNow() {
     clearInterval(timer);
-    window.location.href = targetUrl;
+    // window.location.href = targetUrl;
 }
 
 // Prefetch
