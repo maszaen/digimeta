@@ -47,7 +47,7 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
             clearInterval(timer);
             if (progressContainer) progressContainer.remove();
             watchBtn.disabled = false;
-            watchBtn.textContent = '⏵Watch Movie';
+            watchBtn.innerHTML = '<img src="assets/play.svg" alt=""> Watch Movie';
             redirectText.textContent = 'Ready to watch!';
             subtitle.textContent = 'Click the button below to start watching';
         }
