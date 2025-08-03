@@ -533,8 +533,10 @@ body {
   }
 
   .thumbnail {
-    width: 100%;
     aspect-ratio: 21/31;
+    width: 35vw;
+    max-width: 350px;
+    height: auto; /* INI YANG CRUCIAL! Override height: 480px */
     background-size: cover;
     background-position: center;
     border-radius: 20px 0px 0px 20px;
@@ -543,8 +545,17 @@ body {
 
   .thumbnail-container {
     display: flex;
-    flex: 1;
     flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .content-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-width: 0;
   }
 
   .content-info-1 {
@@ -562,13 +573,6 @@ body {
     max-width: 600px;
   } 
 
-  .content-info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  }
 
   .left-container {
     max-width: 600px;

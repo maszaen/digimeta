@@ -68,7 +68,7 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
             clearInterval(timer);
             window.location.href = targetUrl;
         }
-    };
+    }
 
     function manualRedirect() {
         clearInterval(timer);
