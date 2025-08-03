@@ -1,7 +1,7 @@
 const movieData = {
     'fan4': {
         title: 'The Fantastic 4: First Step',
-        description: 'The Fantastic 4 is now available, get ready for their explosive origin story!',
+        description: 'The Fantastic 4 is now available',
         image: '/assets/movies/fan4.jpeg',
         director: 'Matt Shankman',
         writers: 'Josh Friedman, Eric Pearson, Jeff Kaplan',
@@ -14,7 +14,7 @@ const movieData = {
     },
     'spd': {
         title: 'Spider-man: No way Home',
-        description: 'Spider-man: No way Home is now available, get ready for an adventure across the multiverse!',
+        description: 'Spider-man: No way Home is now available',
         image: '/assets/movies/spd.jpeg',
         director: 'Jon Watts',
         writers: 'Chris McKenna, Erik Sommers, Stan Lee',

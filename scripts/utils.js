@@ -58,8 +58,8 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
             if (progressContainer) progressContainer.remove();
             watchBtn.disabled = false;
             watchBtn.innerHTML = '<img src="assets/download.svg" alt=""> Double Click';
-            redirectText.textContent = 'Ready to download!';
-            subtitle.textContent = 'Click the button below to start downloading';
+            redirectText.remove();
+            subtitle.textContent = 'Double click to download.';
         }
     }, 1000);
 
