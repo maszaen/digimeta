@@ -21,20 +21,30 @@ const watchBtn = document.getElementById('watchBtn');
 const redirectText = document.querySelector('.redirect-text');
 const subtitle = document.querySelector('.subtitle');
 const progressContainer = document.querySelector('.progress-container');
+const movieTags = document.getElementById('movieTags');
 
 if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
     if (progressContainer) progressContainer.style.display = 'none';
+    movieTags.style.display = 'none';
     watchBtn.disabled = true;
     watchBtn.textContent = 'Unavailable';
     redirectText.textContent = 'Video unavailable or not found';
     subtitle.textContent = 'You can still try watching manually';
 } else {
-    // Jalankan countdown normal
     const countdownElements = document.querySelectorAll('.countdown');
     const progressFill = document.getElementById('progressFill');
     const targetUrl = finalContent.redirectUrl;
     const manualUrl = finalContent.redirectUrl2 || finalContent.redirectUrl;
-    
+    const movieTagList = finalContent.tags || [];
+
+    movieTags.innerHTML = '';
+    movieTagList.forEach(tag => {
+        const tagElement = document.createElement('span');
+        tagElement.className = 'tag';
+        tagElement.textContent = tag;
+        movieTags.appendChild(tagElement);
+    });
+
     progressFill.style.width = '0%';
     let countdown = 10;
     
