@@ -50,16 +50,16 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
     
     const timer = setInterval(() => {
         countdown--;
-        countdownElements.forEach(el => el.textContent = countdown + ' seconds');
+        countdownElements.forEach(el => el.textContent = countdown + ' s');
         progressFill.style.width = ((10 - countdown) / 10) * 100 + '%';
     
         if (countdown <= 0) {
             clearInterval(timer);
             if (progressContainer) progressContainer.remove();
             watchBtn.disabled = false;
-            watchBtn.innerHTML = '<img src="assets/play.svg" alt=""> Watch Movie';
-            redirectText.textContent = 'Ready to watch!';
-            subtitle.textContent = 'Click the button below to start watching';
+            watchBtn.innerHTML = '<img src="assets/download.svg" alt=""> Download Movie';
+            redirectText.textContent = 'Ready to download!';
+            subtitle.textContent = 'Click the button below to start downloading';
         }
     }, 1000);
 

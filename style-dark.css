@@ -70,7 +70,7 @@ body {
   display: flex;
   align-items: center;
   background-color: #1e293b;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 15px;
   width: 100%;
   min-width: 300px;
@@ -108,7 +108,7 @@ body {
 
 .left-container {
   background: #1e293b;
-  border-radius: 40px 40px 20px 20px;
+  border-radius: 20px;
   padding: 25px;
   max-width: 380px;
   width: 100%;
@@ -127,7 +127,7 @@ body {
 
 .right-container {
   background: #1e293b;
-  border-radius: 40px 40px 20px 20px;
+  border-radius: 20px;
   padding: 30px;
   flex: 1;
   border: 1px solid #334155;
@@ -142,8 +142,9 @@ body {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23000" width="400" height="600"/><text x="200" y="250" text-anchor="middle" fill="%23666" font-size="24" font-family="Arial">FANTASTIC</text><text x="200" y="290" text-anchor="middle" fill="%23666" font-size="48" font-weight="bold" font-family="Arial">4</text><text x="200" y="330" text-anchor="middle" fill="%23666" font-size="20" font-family="Arial">FIRST STEPS</text></svg>');
   background-size: cover;
   background-position: center;
-  border-radius: 35px;
-  margin-bottom: 32px;
+  border: 1px solid #334155;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .redirect-text {
@@ -412,7 +413,7 @@ body {
 .video-js {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid #334155;
 }
 
