@@ -57,7 +57,7 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
             clearInterval(timer);
             if (progressContainer) progressContainer.remove();
             watchBtn.disabled = false;
-            watchBtn.innerHTML = '<img src="assets/download.svg" alt=""> Download Movie';
+            watchBtn.innerHTML = '<img src="assets/download.svg" alt=""> Double Click';
             redirectText.textContent = 'Ready to download!';
             subtitle.textContent = 'Click the button below to start downloading';
         }
