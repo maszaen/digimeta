@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica Local';
+  font-family: 'Local';
   src: url('/assets/Helvetica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Helvetica Local', system-ui, sans-serif;
+  font-family: 'Local', system-ui, sans-serif;
   background-color: #f0f4f9;
   min-height: 100vh;
   display: flex;

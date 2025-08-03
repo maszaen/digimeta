@@ -6,13 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-dark.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://fpyf8.com/88/tag.min.js" data-zone="160828" async data-cfasync="false"></script>
+    <!-- <script src="https://fpyf8.com/88/tag.min.js" data-zone="160828" async data-cfasync="false"></script> -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6324454647327833" crossorigin="anonymous">
     </script>
-    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9661198,document.createElement('script'))</script>
+    <!-- <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9661198,document.createElement('script'))</script> -->
     <meta name="google-adsense-account" content="ca-pub-6324454647327833">
+    <link href="https://vjs.zencdn.net/8.23.3/video-js.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="header">
+      <div class="header-container">
+      
+          <div class="title-container">
+            <img src="/assets/logo.png" alt="1001 Free Movies Logo" class="logo">
+            <div class="title-text-container">
+              <h1 class="title-2">Digimeta Vision</h1>
+              <p class="subtitle-2">
+                Watch hundreds of movies for free
+              </p>
+            </div>
+          </div>
+          <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Search for movies..." class="search-input">
+          </div>
+
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-title-container">
+          <h2 id="videoTitle">Unknown Movie</h2>
+      </div>
+      <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="640"
+        height="264"
+        poster="MY_VIDEO_POSTER.jpg"
+        data-setup="{}"
+      >
+        <source src="MY_VIDEO.mp4" type="video/mp4" />
+        <source src="MY_VIDEO.webm" type="video/webm" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+      </video>
+    </div>
+    
+
     <div class="main-container">
         <div class="left-container">
             <div class="thumbnail" id="thumbnail"></div>
