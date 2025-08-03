@@ -498,7 +498,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 828px) {
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -530,15 +530,20 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border: none;
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
   }
 
   .thumbnail {
     aspect-ratio: 21/31;
     width: 35vw;
     max-width: 350px;
-    height: auto; /* INI YANG CRUCIAL! Override height: 480px */
+    height: auto;
     background-size: cover;
     background-position: center;
+    border: none;
+    border-right: 1px solid #334155;
     border-radius: 20px 0px 0px 20px;
     margin-bottom: 0px;
   }
@@ -573,6 +578,13 @@ body {
     max-width: 600px;
   } 
 
+  .main-container {
+    padding: 0px;
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
   .left-container {
     max-width: 600px;
@@ -609,5 +621,98 @@ body {
   .right-container {
     max-width: 600px;
     max-height: none;
+  }
+}
+
+@media (max-width: 690px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+  }
+
+  .main-container {
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .left-container {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155; 
+  }
+
+  .right-container-parent {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .right-container  {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155; 
+  }
+
+  .thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .thumbnail {
+    border-radius: 0px;
+  }
+
+  .redirect-text {
+    font-size: 16px;
+  }
+
+  .content-title {
+    font-size: 18px;
+    padding: 0px 5px;
+  }
+
+  .content-description {
+    font-size: 13px;
+    padding: 0px 5px;
+  }
+
+  .other-movies-section {
+    margin-top: 10px;
+    padding: 20px;
+    border: none;
+  }
+
+  .other-movies-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .content-info-container {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .content-info {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0px;
+
   }
 }
