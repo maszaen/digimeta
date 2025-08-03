@@ -28,8 +28,8 @@ if (!movieKey || !movieData[movieKey] || !movieData[movieKey].redirectUrl) {
     movieTags.style.display = 'none';
     watchBtn.disabled = true;
     watchBtn.textContent = 'Unavailable';
-    redirectText.textContent = 'Video unavailable or not found';
-    subtitle.textContent = 'You can still try watching manually';
+    redirectText.textContent = 'Video not found';
+    subtitle.textContent = 'Please check the link or try another movie.';
 } else {
     const countdownElements = document.querySelectorAll('.countdown');
     const progressFill = document.getElementById('progressFill');
