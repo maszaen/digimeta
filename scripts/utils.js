@@ -1,6 +1,6 @@
 // Get URL parameters
 const params = new URLSearchParams(window.location.search);
-const movieKey = params.get('movie') || 'spiderman-no-way-home';
+const movieKey = params.get('movie');
 const content = movieData[movieKey];
 const env = ENV
 
@@ -24,7 +24,7 @@ const finalContent = content || fallback;
 // Initialize page content
 function initializePage() {
     // Set dynamic content
-    document.getElementById('contentTitle').textContent = finalContent.title + ' - Trailer';
+    document.getElementById('contentTitle').textContent = finalContent.title + ' (Trailer)';
     document.getElementById('contentTitle2').textContent = finalContent.title;
     document.getElementById('contentDesc').innerHTML = `<p>${finalContent.description}</p>`;
     document.getElementById('thumbnail').style.backgroundImage = `url('${finalContent.image}')`;
@@ -40,6 +40,11 @@ function initializePage() {
     populateOtherMovies();
     initializeHeaderInteractions();
     initializeVideoPlayer();
+
+    if (!params.has('movie')) {
+      navigateToMovie('spiderman-no-way-home');
+      console.warn('No movie key provided, defaulting to "spiderman-no-way-home".');
+    }
     
     // Set tags
     const movieTags = document.getElementById('movieTags');
@@ -105,7 +110,6 @@ async function initializeVideoPlayer() {
           </p>
         </video>
   `;
-  console.log('Video player initialized with source:', finalUrl);
 }
 
 // Handle movie availability

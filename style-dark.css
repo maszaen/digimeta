@@ -77,15 +77,14 @@ body {
 
 .search-container {
   width: 100%;
-  max-width: 250px; /* Lebar search bar disesuaikan */
+  max-width: 250px;
   border-radius: 8px;
   padding: 8px 12px;
   background-color: whitesmoke;
   margin: 0;
 }
 
-/* Ikon Navigasi Mobile (tersembunyi di desktop) */
-.mobile-nav-icons, .mobile-menu {
+.mobile-nav-icons {
   display: none;
 }
 
@@ -760,19 +759,9 @@ Footer Styles
 
 @media (max-width: 1024px) {
   .header-nav {
-    display: none; /* Sembunyikan navigasi desktop di tablet */
+    display: none;
   }
-  .mobile-nav-icons {
-    display: flex; /* Tampilkan ikon mobile */
-    align-items: center;
-    gap: 10px;
-  }
-  .mobile-icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-  }
+
   .mobile-icon-btn img {
     width: 24px;
     height: 24px;
@@ -781,6 +770,14 @@ Footer Styles
 
 /* Mobile Responsive Styles */
 @media (max-width: 828px) {
+  .mobile-icon-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -893,8 +890,13 @@ Footer Styles
     font-size: 20px;
   }
 
-  .search-container {
-    display: none;
+  .search-container input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    outline: none;
   }
   
   .right-container-parent {
@@ -939,6 +941,38 @@ Footer Styles
   .footer-logo-section {
     max-width: 100%;
   }
+
+  .search-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0f172a;
+    padding: 15px;
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .search-container.active {
+    display: block;
+  }
+
+  .mobile-icon-btn {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .mobile-nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 
@@ -952,62 +986,23 @@ Footer Styles
   .header-container {
     padding: 0 20px;
   }
+
   .title-2 {
     font-size: 18px;
   }
+
   .subtitle-2 {
-    display: none; /* Sembunyikan subtitle di layar sangat kecil */
+    display: none;
   }
+
   .logo {
     max-width: 40px;
   }
-  .search-container {
-    display: none; /* Sembunyikan search bar di mobile */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #0f172a;
-    padding: 15px;
-    border-top: 1px solid #334155;
-    border-bottom: 1px solid #334155;
-    max-width: 100%;
-    border-radius: 0;
-  }
-  .search-container.active {
-    display: block;
-  }
-  
-  /* Styling untuk Mobile Menu Dropdown */
-  .mobile-menu {
-    background-color: #0f172a;
-    border-bottom: 1px solid #334155;
-    position: absolute;
-    top: 100%; /* Posisi di bawah header */
-    left: 0;
-    width: 100%;
-    max-height: 0; /* Awalnya tersembunyi */
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-  }
-  .mobile-menu.active {
-    max-height: 300px; /* Tampilkan menu */
-  }
-  .mobile-menu ul {
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-  }
-  .mobile-menu li a {
-    display: block;
-    color: #e2e8f0;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-size: 16px;
-    border-bottom: 1px solid #1e293b;
-  }
-  .mobile-menu li a:hover {
-    background-color: #1e293b;
+
+  .video-title-container h2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
   }
 
   .title-container {
