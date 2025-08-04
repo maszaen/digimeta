@@ -116,5 +116,19 @@ const movieData = {
             content: 'In 2049, bioengineered humans known as *replicants* are slaves. K, a Nexus-9 replicant, works for the LAPD as a *"blade runner"*, an officer who hunts down and retires rogue replicants.\n\nDuring an investigation, K uncovers a long-buried secret: the remains of a replicant who died during childbirth. This discovery threatens to *shatter the fragile stability* between humans and replicants. K\'s orders are to find and eliminate the child to prevent a potential war.\n\nHis quest leads him on a search for *Rick Deckard*, a former blade runner who has been missing for 30 years. The film delves into themes of *identity, memory, and what it truly means to be human* in a visually stunning, neo-noir landscape.',
             redirectUrl: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
             redirectUrl2: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
-        }
+        },
+        'arrival': {
+            title: 'Arrival',
+            description: 'A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.',
+            image: '/assets/movies/arrival.jpg',
+            director: 'Denis Villeneuve',
+            writers: 'Eric Heisserer, Ted Chiang',
+            stars: 'Amy Adams, Jeremy Renner, Forest Whitaker',
+            tags: ['Drama', 'Mystery', 'Sci-Fi', 'Thriller'],
+            rating: '7.9',
+            reviews: '745K',
+            content: 'When twelve enigmatic alien spacecraft land at different locations across the globe, the world is thrown into turmoil. To prevent a potential global war, the U.S. military recruits elite linguist *Dr. Louise Banks* (Amy Adams) to lead a team to establish communication with the extraterrestrial visitors.\n\nAs Louise begins to decipher their complex, non-linear language, she experiences vivid flashbacks that reveal a profound personal connection to the aliens\' purpose. The language of the "Heptapods" fundamentally alters her perception of *time*, blurring the lines between past, present, and future.\n\nShe must race against time to interpret their message before other nations, driven by fear and suspicion, launch an attack. The film is a thought-provoking exploration of *communication*, *time*, and *humanity\'s response to the unknown*, culminating in a deeply emotional and mind-bending revelation.',
+            redirectUrl: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
+            redirectUrl2: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
+        },
 };

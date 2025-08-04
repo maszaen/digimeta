@@ -75,7 +75,8 @@ function formatContentToHTML(text) {
     const html = text
         .replace(/\*(.*?)\*/g, '<strong>$1</strong>') 
         .replace(/\_(.*?)\_/g, '<em>$1</em>')         
-        .replace(/\\n/g, '<br>');                  
+        .replace(/\n\n/g, '<br><br>') // paragraf
+        .replace(/\n/g, '<br>');                   
 
     return html;
 }
@@ -195,7 +196,6 @@ function startCountdown(seconds, resolution) {
     }, 1000);
 }
 
-// Reset download UI to initial state
 function resetDownloadUI(resolution) {
     const redirectText = document.getElementById('redirectText');
     const subtitle = document.getElementById('subtitle');
@@ -208,7 +208,7 @@ function resetDownloadUI(resolution) {
     progressContainer.style.display = 'none';
     downloadBtn.disabled = false;
     downloadBtn.textContent = `Download ${resolution}p`;
-    resolutionContainer.style.display = 'block';
+    resolutionContainer.style.display = 'flex';
 }
 
 // Check download state on page load
