@@ -87,8 +87,11 @@ async function initializeVideoPlayer() {
   const videoPlayer = document.getElementById('videoPlayer');
 
   if (finalContent.fileId && videoPlayer) {
-    videoPlayer.src = `${env.ENDPOINT}/storage/buckets/${env.BUCKET}/files/${finalContent.fileId}/view?project=${env.PROJECT_ID}&mode=admin`;
-    await videoPlayer.load();
+    videoPlayer.src = `${env.ENDPOINT}/storage/buckets/${env.BUCKET}/files/${finalContent.fileId}/view?project=${env.PROJECT_ID}`;
+    if (typeof videoPlayer.load === 'function') {
+      videoPlayer.load();
+    }
+    console.log('Video player initialized with source:', videoPlayer.src);
   }
 }
 
