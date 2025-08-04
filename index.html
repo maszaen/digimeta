@@ -15,22 +15,46 @@
 </head>
 <body>
     <div class="header">
-      <div class="header-container">
-      
-          <div class="title-container">
-            <img src="/assets/logo.png" alt="1001 Free Movies Logo" class="logo">
-            <div class="title-text-container">
-              <h1 class="title-2">Digimeta Vision</h1>
-              <p class="subtitle-2">
-                Watch hundreds of movies for free
-              </p>
+        <div class="header-container">
+            <div class="title-container">
+                <img src="/assets/logo.png" alt="Digimeta Vision Logo" class="logo">
+                <div class="title-text-container">
+                    <h1 class="title-2">Digimeta Vision</h1>
+                    <p class="subtitle-2">Watch hundreds of movies for free</p>
+                </div>
             </div>
-          </div>
-          <div class="search-container">
-              <input type="text" id="searchInput" placeholder="Search for movies..." class="search-input">
-          </div>
 
-      </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Movies</a></li>
+                    <li><a href="#" class="nav-link">Series</a></li>
+                    <li><a href="#" class="nav-link">Genres</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for movies..." class="search-input">
+                </div>
+                <div class="mobile-nav-icons">
+                    <button id="mobile-search-btn" class="mobile-icon-btn" aria-label="Toggle Search">
+                        <img src="/assets/search.svg" alt="Search Icon">
+                    </button>
+                    <button id="mobile-menu-btn" class="mobile-icon-btn" aria-label="Toggle Menu">
+                        <img src="/assets/menu.svg" alt="Menu Icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">Genres</a></li>
+            </ul>
+        </div>
     </div>
 
     <div class="video-container">
@@ -66,27 +90,43 @@
               <div class="thumbnail" id="thumbnail"></div>
               <div class="content-info-container">
                 <div class="content-info-1">
-                  <div class="content-title">Movie download</div>
+                  <div class="content-title" id="contentTitle2"></div>
                   <div class="content-description" id="contentDesc">
                       <p>No description available.</p>
                   </div>
                 </div>
 
                 <div class="content-info">
-                  <h1 class="redirect-text">
-                    Download ready in <span class="countdown" id="countdown">10s</span>
+                  <h1 class="redirect-text" id="redirectText">
+                    Movie download
                   </h1>
     
-                  <p class="subtitle">Please wait a moment...</p>
-    
-                  <div class="progress-container" id="progressContainer">
+                  <p class="subtitle" id="subtitle">Select quality and download</p>
+
+                  <!-- Resolution Selection -->
+                  <div class="resolution-container" id="resolutionContainer">
+                    <div class="resolution-option">
+                      <input type="radio" id="res480" name="resolution" value="480" checked>
+                      <label for="res480">480p</label>
+                    </div>
+                    <div class="resolution-option">
+                      <input type="radio" id="res720" name="resolution" value="720">
+                      <label for="res720">720p</label>
+                    </div>
+                    <div class="resolution-option">
+                      <input type="radio" id="res1080" name="resolution" value="1080">
+                      <label for="res1080">1080p</label>
+                    </div>
+                  </div>
+
+                  <div class="progress-container" id="progressContainer" style="display: none;">
                       <div class="progress-bar">
                           <div class="progress-fill" id="progressFill"></div>
                       </div>
                   </div>
     
-                  <button id="watchBtn" class="watch-btn" onclick="watchMovie()" disabled>
-                    Please wait ...
+                  <button id="watchBtn" class="watch-btn" onclick="handleDownload()">
+                    <img src="assets/download.svg" alt=""> Download 480p
                   </button>
                 </div>
                 
@@ -96,8 +136,8 @@
         </div>
 
         <div class="right-container-parent">
-          <div class="right-container">
-              <h2 class="about-title">About Fantastic 4: First Steps</h2>
+          <div class="right-container" id="rightContainer">
+              <h2 class="about-title" id="aboutTitle">Unknown Movie</h2>
               
               <div class="movie-tags" id="movieTags">
               </div>
@@ -106,59 +146,40 @@
                   <p class="rating-text">Overall Rating</p>
                   
                   <div>
-                      <div class="rating-score">7.4<span class="rating-star">&#9733;</span></div>
-                      <div class="rating-total">77.5K reviews</div>
+                      <div class="rating-score" id="ratingScore">?<span class="rating-star">&#9733;</span></div>
+                      <div class="rating-total" id="ratingTotal">? reviews</div>
                   </div>
               </div>
 
               <div class="movie-details">
                   <div class="detail-row">
                       <span class="detail-label">Director</span>
-                      <span class="detail-value">: Matt Shakman</span>
+                      <span class="detail-value" id="directorValue">: Unknown</span>
                   </div>
                   <div class="detail-row">
                       <span class="detail-label">Writers</span>
-                      <span class="detail-value">: Josh Friedman, Eric Pearson, Jeff Kaplan</span>
+                      <span class="detail-value" id="writersValue">: Unknown</span>
                   </div>
                   <div class="detail-row">
                       <span class="detail-label">Stars</span>
-                      <span class="detail-value">: Pedro Pascal, Vanessa Kirby, Ebon Moss-Bachrach</span>
+                      <span class="detail-value" id="starsValue">: Unknown</span>
                   </div>
               </div>
 
-              <div class="about-content">
-                  <p><strong>The Fantastic Four: First Steps</strong> (or <strong>The Fantastic 4: First Steps</strong>) is a 2025 American superhero film directed by Matt Shakman from a screenplay written by Jeff Kaplan, Ian Springer, Josh Friedman, and Eric Pearson, based on the Fantastic Four superhero team from Marvel Comics. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, the film is the 37th film in the Marvel Cinematic Universe (MCU) and serves as the second reboot of the <em>Fantastic Four</em> film series.</p>
-                  
-                  <br>
-                  
-                  <p>The film features an ensemble cast consisting of Pedro Pascal, Vanessa Kirby, Joseph Quinn, and Ebon Moss-Bachrach as the main characters, alongside Ralph Ineson, Julia Garner, Paul Walter Hauser, John Malkovich, Natasha Lyonne, and Sarah Niles in supporting roles.</p>
-                  
-                  <br>
-                  
-                  <p>In the film, the Fantastic Four must protect Earth, a retro-futuristic 1960s world, which is threatened to be consumed by the cosmic planet-eating entity Galactus. The movie explores themes of family, heroism, and sacrifice while delivering spectacular visual effects and action sequences that showcase the unique powers of each team member.</p>
+              <div class="about-content" id="movieContent">
               </div>
+
+              <button class="show-more-btn" id="showMoreBtn" onclick="toggleExpand()">
+                <span class="btn-text">Show more</span>
+                <img src="/assets/down-arrow.svg" alt="expand" class="arrow-icon">
+              </button>
           </div>
 
           <div class="other-movies-section">
-            <h2 class="other-movies-title">Other Movies</h2>
+            <h2 class="other-movies-title">Other Popular <strong>Sci-fi Movies</strong></h2>
 
             <div class="movie-grid">
-              <div class="movie-card" onclick="manualRedirect()">
-                <img src="/assets/movies/gog.jpg"  alt="Guardians of the Galaxy Vol 2" class="movie-thumb">
-                <div class="movie-name">Guardians of the Galaxy - Vol 2</div>
-              </div>
-              <div class="movie-card" onclick="manualRedirect()">
-                <img src="/assets/movies/atl.jpeg" alt="Atlas" class="movie-thumb">
-                <div class="movie-name">Jennifer Lopez: Atlas</div>
-              </div>
-              <div class="movie-card" onclick="manualRedirect()">
-                <img src="/assets/movies/pcr.jpg" alt="Pacific Rim (2013)" class="movie-thumb">
-                <div class="movie-name">Pacific Rim (2013)</div>
-              </div>
-              <div class="movie-card" onclick="manualRedirect()">
-                <img src="/assets/movies/spd.jpeg" alt="Spider-man: No way home" class="movie-thumb">
-                <div class="movie-name">Spider-man: No way home</div>
-              </div>
+              
             </div>
 
             <div class="explore-more">
@@ -169,8 +190,56 @@
 
         </div>
     </div>
-
     <script src="/scripts/data.js"></script>
     <script src="/scripts/utils.js"></script>
-</body>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/assets/logo.png" alt="Digimeta Vision Logo" class="footer-logo">
+                    <p class="footer-tagline">Your destination for discovering and enjoying free movies from around the world.</p>
+                </div>
+                <div class="footer-links-section">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Browse Movies</a></li>
+                            <li><a href="#">New Releases</a></li>
+                            <li><a href="#">Genres</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><img src="/assets/social/facebook.svg" alt="Facebook"></a>
+                    <a href="#" aria-label="Twitter"><img src="/assets/social/twitter.svg" alt="Twitter"></a>
+                    <a href="#" aria-label="Instagram"><img src="/assets/social/instagram.svg" alt="Instagram"></a>
+                    <a href="#" aria-label="YouTube"><img src="/assets/social/youtube.svg" alt="YouTube"></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2025 Digimeta Vision. All rights reserved.</p>
+                </div>
+            </div> 
+        </div>
+    </footer>
+  </body>
 </html>
