@@ -10,4 +10,4 @@ const output = template
 
 fs.writeFileSync(path.join(__dirname, 'scripts', 'env.js'), output);
 
-console.log('env.js berhasil dibuild!');
+console.log('env.js was created!');

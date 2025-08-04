@@ -1,6 +1,6 @@
 // Get URL parameters
 const params = new URLSearchParams(window.location.search);
-const movieKey = params.get('movie') || 'fantastic-four';
+const movieKey = params.get('movie') || 'spiderman-no-way-home';
 const content = movieData[movieKey];
 const env = ENV
 
@@ -24,7 +24,7 @@ const finalContent = content || fallback;
 // Initialize page content
 function initializePage() {
     // Set dynamic content
-    document.getElementById('contentTitle').textContent = finalContent.title;
+    document.getElementById('contentTitle').textContent = finalContent.title + ' - Trailer';
     document.getElementById('contentTitle2').textContent = finalContent.title;
     document.getElementById('contentDesc').innerHTML = `<p>${finalContent.description}</p>`;
     document.getElementById('thumbnail').style.backgroundImage = `url('${finalContent.image}')`;
@@ -324,15 +324,13 @@ function populateOtherMovies() {
     const gridContainer = document.querySelector('.movie-grid');
     if (!gridContainer) return;
 
-    gridContainer.innerHTML = ''; // Kosongkan kontainer terlebih dahulu
+    gridContainer.innerHTML = '';
 
     for (const [key, movie] of Object.entries(movieData)) {
-        // Lewati film jika key-nya sama dengan film yang sedang aktif
         if (key === movieKey) {
             continue;
         }
 
-        // Buat elemen movie-card
         const movieCard = document.createElement('div');
         movieCard.className = 'movie-card';
         movieCard.setAttribute('onclick', `navigateToMovie('${key}')`);
@@ -369,7 +367,6 @@ function initializeHeaderInteractions() {
     }
 }
 
-// Navigation functionality
 function navigateToMovie(movieKey) {
     if (movieKey && movieData[movieKey]) {
         window.location.href = `?movie=${movieKey}`;
@@ -378,7 +375,6 @@ function navigateToMovie(movieKey) {
     }
 }
 
-// Manual redirect function (for legacy compatibility)
 function manualRedirect() {
     const manualUrl = finalContent.redirectUrl2 || finalContent.redirectUrl;
     if (manualUrl) {
@@ -386,7 +382,6 @@ function manualRedirect() {
     }
 }
 
-// Search functionality (basic implementation)
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
