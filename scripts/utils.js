@@ -84,15 +84,28 @@ function formatContentToHTML(text) {
 }
 
 async function initializeVideoPlayer() {
-  const videoPlayer = document.getElementById('videoPlayer');
-
-  if (finalContent.fileId && videoPlayer) {
-    videoPlayer.src = `${env.ENDPOINT}/storage/buckets/${env.BUCKET}/files/${finalContent.fileId}/view?project=${env.PROJECT_ID}`;
-    if (typeof videoPlayer.load === 'function') {
-      videoPlayer.load();
-    }
-    console.log('Video player initialized with source:', videoPlayer.src);
-  }
+  const videoContainer = document.getElementById('videoContainer');
+  const finalUrl = `${env.ENDPOINT}/storage/buckets/${env.BUCKET}/files/${finalContent.fileId}/view?project=${env.PROJECT_ID}`;
+  videoContainer.innerHTML = `
+    <video
+          id="videoPlayer"
+          class="video-js vjs-theme-city"
+          controls
+          preload="auto"
+          poster="assets/default-black.jpg"
+          data-setup="{}"
+        >
+          <source src="${finalUrl}" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >supports HTML5 video</a
+            >
+          </p>
+        </video>
+  `;
+  console.log('Video player initialized with source:', finalUrl);
 }
 
 // Handle movie availability
