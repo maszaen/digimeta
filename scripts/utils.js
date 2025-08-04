@@ -2,6 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const movieKey = params.get('movie') || 'fantastic-four';
 const content = movieData[movieKey];
+const env = ENV
 
 // Fallback content for invalid movie keys
 const fallback = {
@@ -38,6 +39,7 @@ function initializePage() {
 
     populateOtherMovies();
     initializeHeaderInteractions();
+    initializeVideoPlayer();
     
     // Set tags
     const movieTags = document.getElementById('movieTags');
@@ -75,10 +77,19 @@ function formatContentToHTML(text) {
     const html = text
         .replace(/\*(.*?)\*/g, '<strong>$1</strong>') 
         .replace(/\_(.*?)\_/g, '<em>$1</em>')         
-        .replace(/\n\n/g, '<br><br>') // paragraf
+        .replace(/\n\n/g, '<br><br>')
         .replace(/\n/g, '<br>');                   
 
     return html;
+}
+
+async function initializeVideoPlayer() {
+  const videoPlayer = document.getElementById('videoPlayer');
+
+  if (finalContent.fileId && videoPlayer) {
+    videoPlayer.src = `${env.ENDPOINT}/storage/buckets/${env.BUCKET}/files/${finalContent.fileId}/view?project=${env.PROJECT_ID}&mode=admin`;
+    await videoPlayer.load();
+  }
 }
 
 // Handle movie availability

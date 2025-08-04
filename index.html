@@ -64,15 +64,14 @@
           <h2 id="contentTitle">Unknown Movie</h2>
       </div>
       <video
-        id="my-video"
+        id="videoPlayer"
         class="video-js vjs-theme-city"
         controls
         preload="auto"
         poster="assets/default-black.jpg"
         data-setup="{}"
       >
-        <source src="assets/spd.mp4" type="video/mp4" />
-        <source src="MY_VIDEO.webm" type="video/webm" />
+        <source id="videoSource" src="" type="video/mp4" />
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to a
           web browser that
@@ -191,6 +190,7 @@
         </div>
     </div>
 
+    <script src="/scripts/env.js"></script>
     <script src="/scripts/data.js"></script>
     <script src="/scripts/utils.js"></script>
     <script src="https://vjs.zencdn.net/8.23.3/video.min.js"></script>

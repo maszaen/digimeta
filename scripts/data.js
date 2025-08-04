@@ -72,6 +72,7 @@ const movieData = {
             content: 'After *Mysterio* reveals Peter Parker’s identity, Peter’s life spirals. Facing rejection from colleges and public backlash, he turns to *Doctor Strange* for help.\n\nThe botched spell opens the *multiverse*, bringing villains from other realities: *Doc Ock*, *Green Goblin*, *Electro*, *Lizard*, and *Sandman*. With the arrival of alternate Spider-Men (*Tobey Maguire* and *Andrew Garfield*), the trio works together to *cure the villains*.\n\nIn a heart-wrenching decision, Peter asks Strange to make *everyone forget him*. He chooses anonymity to protect his loved ones, embracing his role as Spider-Man anew, *alone but resolute*.',
             redirectUrl: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
             redirectUrl2: 'https://dwightcherrykings.com/sa275vh7?key=ad56867b7c2622a482d3367dcd098b66',
+            fileId: '6890623d0037763406d4',
         },
         'dune-part-two': {
             title: 'Dune: Part Two',
