@@ -52,7 +52,7 @@ body {
 
 .title-container {
   width: fit-content;
-  max-width: 240px;
+  max-width: 540px;
   display: flex;
   align-items: center;
   gap: 15px;
